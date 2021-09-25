@@ -1,19 +1,18 @@
 package kr.co.test.contstraint.entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Entity
 @Table
+@Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class Member {
+public class MemberInfo {
 
 	@Id
+	@Column(name = "member_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long memberId;
 
@@ -23,7 +22,7 @@ public class Member {
 	@Column
 	private String address;
 
-	public Member() {
+	public MemberInfo() {
 
 	}
 }

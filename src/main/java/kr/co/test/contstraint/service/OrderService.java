@@ -2,7 +2,7 @@ package kr.co.test.contstraint.service;
 
 import kr.co.test.contstraint.dto.OrderCreateInfo;
 import kr.co.test.contstraint.dto.OrderInfoDto;
-import kr.co.test.contstraint.entity.Member;
+import kr.co.test.contstraint.entity.MemberInfo;
 import kr.co.test.contstraint.entity.OrderInfo;
 import kr.co.test.contstraint.entity.Product;
 import kr.co.test.contstraint.repository.*;
@@ -28,7 +28,7 @@ public class OrderService {
 
 	@Transactional
 	public void saveOrder(OrderCreateInfo orderCreateInfo) {
-		Member member = memberRepository.findById(orderCreateInfo.getOrdererId()).orElseThrow(() -> new RuntimeException("NOT EXIST MEMBER"));
+		MemberInfo member = memberRepository.findById(orderCreateInfo.getOrdererId()).orElseThrow(() -> new RuntimeException("NOT EXIST MEMBER"));
 		Product product = productRepository.findById(orderCreateInfo.getProductId()).orElseThrow(() -> new RuntimeException("NOT EXIST PRODUCT"));
 		orderRepository.save(OrderInfo.from(orderCreateInfo, member, product));
 	}

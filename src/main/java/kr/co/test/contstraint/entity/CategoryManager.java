@@ -1,19 +1,18 @@
 package kr.co.test.contstraint.entity;
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table
 @Getter
+@Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class CategoryManager {
 
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long categoryManagerId;
 

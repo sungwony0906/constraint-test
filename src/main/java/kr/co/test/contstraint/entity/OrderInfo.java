@@ -13,12 +13,13 @@ import javax.persistence.*;
 public class OrderInfo {
 
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long orderInfoId;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "member_id")
-	private Member orderer;
+	private MemberInfo orderer;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id")
@@ -34,7 +35,7 @@ public class OrderInfo {
 
 	}
 
-	public static OrderInfo from(OrderCreateInfo orderCreateInfo, Member member, Product product) {
+	public static OrderInfo from(OrderCreateInfo orderCreateInfo, MemberInfo member, Product product) {
 		return OrderInfo.builder()
 						.orderer(member)
 						.product(product)

@@ -1,20 +1,19 @@
 package kr.co.test.contstraint.entity;
 
 import jdk.jfr.Category;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Getter
 @Entity
 @Table
+@Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Product {
 
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long productId;
 

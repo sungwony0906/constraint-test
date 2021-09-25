@@ -1,7 +1,7 @@
 package kr.co.test.contstraint.repository;
 
-import kr.co.test.contstraint.entity.Member;
+import kr.co.test.contstraint.entity.MemberInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface MemberRepository extends JpaRepository<MemberInfo, Long> {
 }

@@ -5,7 +5,7 @@ CREATE TABLE test.category_manager (
                                     PRIMARY KEY (`category_manager_id`)
 );
 
-CREATE TABLE test.member (
+CREATE TABLE test.member_info (
                           `member_id` bigint NOT NULL AUTO_INCREMENT,
                           `address` varchar(255) NOT NULL,
                           `name` varchar(255) NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE test.order_info (
                          `total_order_amount` double NOT NULL,
                          PRIMARY KEY (`order_info_id`),
                          KEY `fk_pd_mi` (`member_id`),
-                         CONSTRAINT `fk_pd_mi` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`),
+                         CONSTRAINT `fk_pd_mi` FOREIGN KEY (`member_id`) REFERENCES `member_info` (`member_id`),
                          KEY `fk_pd_pi` (`product_id`),
                          CONSTRAINT `fk_pd_pi` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`)
 
