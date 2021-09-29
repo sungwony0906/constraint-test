@@ -1,8 +1,11 @@
 package kr.co.test.contstraint.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
-@Getter
+@AllArgsConstructor
+@Getter @Setter
 public class OrderCreateInfo {
 	private Long ordererId;
 

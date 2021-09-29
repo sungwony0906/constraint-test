@@ -5,11 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 import static java.util.stream.Collectors.toList;
 
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Getter @Setter
 public class OrderInfoDto {
 
 	private Long orderId;
